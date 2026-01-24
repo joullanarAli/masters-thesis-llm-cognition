@@ -1,0 +1,22 @@
+# Prompt templates
+prompts:
+  humaneval_template: |
+    Write a Python function that solves the following problem:
+    
+    Problem: {problem_description}
+    
+    Function signature: {function_signature}
+    
+    Requirements:
+    1. Include proper error handling
+    2. Add comments for complex logic
+    3. Return only the complete function implementation
+    
+    Solution:
+    
+  comparison_prompt: |
+    Given this coding problem, generate two different solutions:
+    1. An efficient but complex solution
+    2. A readable but simpler solution
+    
+    Problem: {problem}
