@@ -1,0 +1,9 @@
+# Core Thesis Project Dependencies
+flask>=3.0.0
+pyyaml>=6.0
+pandas>=2.0.0
+google-genai>=1.0.0
+
+# Optional but useful for development
+python-dotenv>=1.0.0  # For environment variables
+requests>=2.31.0       # For HTTP requests

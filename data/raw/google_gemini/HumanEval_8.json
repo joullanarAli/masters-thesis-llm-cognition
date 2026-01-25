@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-25T21:18:40.135099",
+  "problem_id": "HumanEval/8",
+  "problem_prompt": "from typing import List, Tuple\n\n\ndef sum_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    >>> sum_product([])\n    (0, 1)\n    >>> sum_product([1, 2, 3, 4])\n    (10, 24)\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "from typing import List, Tuple\n\n\ndef sum_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    \"\"\"\n    sum_val = 0\n    prod_val = 1\n    for num in numbers:\n        sum_val += num\n        prod_val *= num\n    return sum_val, prod_val"
+}

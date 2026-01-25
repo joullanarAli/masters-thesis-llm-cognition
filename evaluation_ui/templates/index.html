@@ -1,0 +1,140 @@
+<!-- evaluation_ui/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thesis Evaluation - Developer Cognition & AI-Generated Code</title>
+    <!-- Bootstrap for quick, decent styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+        .hero {
+            background: linear-gradient(135deg, #6f42c1 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 1rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .stats-card {
+            border-left: 5px solid #6f42c1;
+        }
+        .instructions {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+            margin-bottom: 2rem;
+        }
+        .btn-start {
+            padding: 0.75rem 2rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .footer-note {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero / Title Section -->
+        <div class="hero">
+            <h1 class="display-5 fw-bold">🧠 Thesis: Developer Evaluation of AI-Generated Code</h1>
+            <p class="lead">Help advance research on how software developers perceive, trust, and adopt code from Large Language Models.</p>
+            <p class="mb-0">You will evaluate <strong>{{ total }}</strong> programming problems and their AI-generated solutions.</p>
+        </div>
+
+        <div class="row">
+            <!-- Left Column: Instructions -->
+            <div class="col-md-8">
+                <div class="instructions">
+                    <h3>📋 Evaluation Instructions</h3>
+                    <p>Thank you for contributing to this research. Please evaluate each AI-generated solution based on your professional judgment.</p>
+
+                    <h5>For each task, you will rate:</h5>
+                    <ul>
+                        <li><strong>Correctness</strong> (1-5): Is the solution logically and functionally correct?</li>
+                        <li><strong>Readability</strong> (1-5): Is the code clear, well-structured, and easy to understand?</li>
+                        <li><strong>Intention to Use</strong>: Would you adopt this code in a project?</li>
+                        <li><strong>Comments</strong> (Optional): Any specific feedback on style, bugs, or improvements.</li>
+                    </ul>
+
+                    <h5>Evaluation Principles:</h5>
+                    <ul>
+                        <li>Consider the solution as if you encountered it in a real code review.</li>
+                        <li>Base your rating on the provided <strong>Problem Prompt</strong> (the task specification).</li>
+                        <li>You can use the "Previous" button to revisit past problems before submitting your final ratings.</li>
+                        <li>Your responses will be saved automatically after clicking <strong>"Submit & Next Problem"</strong>.</li>
+                    </ul>
+
+                    <!-- Direct link to the first problem -->
+                    <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                        <a href="{{ url_for('evaluate', problem_index=0) }}" class="btn btn-success btn-lg btn-start">
+                            {% if evaluated == 0 %}
+                                🚀 Start Evaluation
+                            {% else %}
+                                🔄 Continue Evaluation
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Progress Stats -->
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h5 class="card-title">📊 Your Progress</h5>
+                        <p class="card-text">Track how many problems you have evaluated.</p>
+
+                        {% set percentage_num = (evaluated / total * 100) if total > 0 else 0 %}
+
+                        <div class="progress mb-3" style="height: 25px; --progress-width: {{ percentage_num }}%;">
+                            <div class="progress-bar bg-success progress-bar-striped" role="progressbar"
+                                style="width: var(--progress-width);"
+                                aria-valuenow="{{ evaluated }}" 
+                                aria-valuemax="{{ total }}">
+                                {{ evaluated }}/{{ total }}
+                            </div>
+                        </div>
+                        <p><strong>{{ evaluated }}</strong> of <strong>{{ total }}</strong> problems evaluated.</p>
+
+                        {% if evaluated > 0 and evaluated < total %}
+                            <p class="text-muted">You will resume from problem <strong>#{{ evaluated + 1 }}</strong>.</p>
+                        {% elif evaluated == total %}
+                            <div class="alert alert-success" role="alert">
+                                ✅ You have completed all evaluations. Thank you!
+                            </div>
+                        {% endif %}
+
+                        <div class="mt-4">
+                            <h6>Dataset Information</h6>
+                            <ul class="list-unstyled">
+                                <li>📁 <strong>Source:</strong> HumanEval Benchmark</li>
+                                <li>🤖 <strong>AI Model:</strong> Google Gemini</li>
+                                <li>📅 <strong>Generated:</strong> {{ session_date or "Recent" }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="footer-note">
+            <p>This interface is part of a Master's Thesis research on <em>"Models of professional behavior of software developers: profiles, levels of expertise, subjective and objective characteristics"</em> at ITMO University.</p>
+            <p>All evaluations are anonymous and used strictly for academic analysis.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-25T21:19:45.219047",
+  "problem_id": "HumanEval/11",
+  "problem_prompt": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "from typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n    return \"\".join('0' if x == y else '1' for x, y in zip(a, b))"
+}

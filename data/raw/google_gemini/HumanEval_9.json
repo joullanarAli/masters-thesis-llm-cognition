@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-25T21:19:07.015807",
+  "problem_id": "HumanEval/9",
+  "problem_prompt": "from typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "```python\nfrom typing import List, Tuple\n\n\ndef rolling_max(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n    if not numbers:\n        return []\n    \n    result = []\n    current_max = numbers[0]\n    for n in numbers:\n        if n > current_max:\n            current_max = n\n        result.append(current_max)\n    return result\n\n```"
+}
