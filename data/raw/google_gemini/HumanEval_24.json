@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-28T01:00:11.656164",
+  "problem_id": "HumanEval/24",
+  "problem_prompt": "\n\ndef largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "def largest_divisor(n: int) -> int:\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return n // i\n    return 1"
+}

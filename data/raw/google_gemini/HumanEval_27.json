@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-28T01:01:29.514014",
+  "problem_id": "HumanEval/27",
+  "problem_prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "def flip_case(string: str) -> str:\n    return string.swapcase()"
+}

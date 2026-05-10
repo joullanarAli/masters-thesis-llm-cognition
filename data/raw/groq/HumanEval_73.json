@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:45:16.374443",
+  "problem_id": "HumanEval/73",
+  "problem_prompt": "\ndef smallest_change(arr):\n    \"\"\"\n    Given an array arr of integers, find the minimum number of elements that\n    need to be changed to make the array palindromic. A palindromic array is an array that\n    is read the same backwards and forwards. In one change, you can change one element to any other element.\n\n    For example:\n    smallest_change([1,2,3,5,4,7,9,6]) == 4\n    smallest_change([1, 2, 3, 4, 3, 2, 2]) == 1\n    smallest_change([1, 2, 3, 2, 1]) == 0\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def smallest_change(arr):\n    \"\"\"\n    Given an array arr of integers, find the minimum number of elements that\n    need to be changed to make the array palindromic. A palindromic array is an array that\n    is read the same backwards and forwards. In one change, you can change one element to any other element.\n\n    Parameters:\n    arr (list): The input array of integers.\n\n    Returns:\n    int: The minimum number of elements that need to be changed to make the array palindromic.\n    \"\"\"\n    n = len(arr)\n    freq = {}\n    for num in arr:\n        freq[num] = freq.get(num, 0) + 1\n    odd_count = 0\n    for count in freq.values():\n        if count % 2 != 0:\n            odd_count += 1\n    return max(0, n - odd_count)"
+}

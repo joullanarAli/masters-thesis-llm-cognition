@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T22:09:23.986643",
+  "problem_id": "HumanEval/155",
+  "problem_prompt": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\"\"\"\n    even = 0\n    odd = 0\n    for digit in str(abs(num)):\n        if int(digit) % 2 == 0:\n            even += 1\n        else:\n            odd += 1\n    return (even, odd)"
+}

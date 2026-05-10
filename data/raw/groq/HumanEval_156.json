@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T22:09:41.262115",
+  "problem_id": "HumanEval/156",
+  "problem_prompt": "\ndef int_to_mini_roman(number):\n    \"\"\"\n    Given a positive integer, obtain its roman numeral equivalent as a string,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n\n    Examples:\n    >>> int_to_mini_roman(19) == 'xix'\n    >>> int_to_mini_roman(152) == 'clii'\n    >>> int_to_mini_roman(426) == 'cdxxvi'\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def int_to_mini_roman(number):\n    \"\"\"\n    Given a positive integer, obtain its roman numeral equivalent as a string,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n    \"\"\"\n    roman_numerals = {\n        1000: 'm', 900: 'cm', 500: 'd', 400: 'cd',\n        100: 'c', 90: 'xc', 50: 'l', 40: 'xl',\n        10: 'x', 9: 'ix', 5: 'v', 4: 'iv', 1: 'i'\n    }\n    result = ''\n    for value, numeral in roman_numerals.items():\n        while number >= value:\n            result += numeral\n            number -= value\n    return result"
+}

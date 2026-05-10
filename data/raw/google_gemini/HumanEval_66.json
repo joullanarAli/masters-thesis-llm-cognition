@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-01T10:49:31.177325",
+  "problem_id": "HumanEval/66",
+  "problem_prompt": "\ndef digitSum(s):\n    \"\"\"Task\n    Write a function that takes a string as input and returns the sum of the upper characters only'\n    ASCII codes.\n\n    Examples:\n        digitSum(\"\") => 0\n        digitSum(\"abAB\") => 131\n        digitSum(\"abcCd\") => 67\n        digitSum(\"helloE\") => 69\n        digitSum(\"woArBld\") => 131\n        digitSum(\"aAaaaXa\") => 153\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "```python\ndef digitSum(s):\n    return sum(ord(char) for char in s if char.isupper())\n```"
+}

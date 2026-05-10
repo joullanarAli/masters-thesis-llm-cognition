@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T22:04:30.492237",
+  "problem_id": "HumanEval/138",
+  "problem_prompt": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def is_equal_to_sum_even(n):\n    def is_sum_of_four_even(a, b, c, d):\n        return (a + b + c + d == n) and (a % 2 == 0 and b % 2 == 0 and c % 2 == 0 and d % 2 == 0)\n\n    for a in range(2, n, 2):\n        for b in range(a, n, 2):\n            for c in range(b, n, 2):\n                for d in range(c, n, 2):\n                    if is_sum_of_four_even(a, b, c, d):\n                        return True\n    return False"
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:27:32.275253",
+  "problem_id": "HumanEval/14",
+  "problem_prompt": "from typing import List\n\n\ndef all_prefixes(string: str) -> List[str]:\n    \"\"\" Return list of all prefixes from shortest to longest of the input string\n    >>> all_prefixes('abc')\n    ['a', 'ab', 'abc']\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "from typing import List\n\ndef all_prefixes(string: str) -> List[str]:\n    return [string[:i] for i in range(1, len(string) + 1)]"
+}

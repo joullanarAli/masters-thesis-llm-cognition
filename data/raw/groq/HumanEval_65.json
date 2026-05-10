@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:43:01.148988",
+  "problem_id": "HumanEval/65",
+  "problem_prompt": "\ndef circular_shift(x, shift):\n    \"\"\"Circular shift the digits of the integer x, shift the digits right by shift\n    and return the result as a string.\n    If shift > number of digits, return digits reversed.\n    >>> circular_shift(12, 1)\n    \"21\"\n    >>> circular_shift(12, 2)\n    \"12\"\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def circular_shift(x, shift):\n    num_str = str(x)\n    shift = shift % len(num_str)\n    return num_str[-shift:] + num_str[:-shift]"
+}

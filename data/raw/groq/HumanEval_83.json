@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:48:05.360341",
+  "problem_id": "HumanEval/83",
+  "problem_prompt": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    return 9 * (10 ** (n - 2)) + 10 * (10 ** (n - 1)) - 9"
+}

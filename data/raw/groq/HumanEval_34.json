@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:33:13.365864",
+  "problem_id": "HumanEval/34",
+  "problem_prompt": "\n\ndef unique(l: list):\n    \"\"\"Return sorted unique elements in a list\n    >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [0, 2, 3, 5, 9, 123]\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def unique(l: list):\n    return sorted(set(l))"
+}

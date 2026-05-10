@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-02T21:13:52.790197",
+  "problem_id": "HumanEval/92",
+  "problem_prompt": "\ndef any_int(x, y, z):\n    '''\n    Create a function that takes 3 numbers.\n    Returns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\n    Returns false in any other cases.\n    \n    Examples\n    any_int(5, 2, 7) \u279e True\n    \n    any_int(3, 2, 2) \u279e False\n\n    any_int(3, -2, 1) \u279e True\n    \n    any_int(3.6, -2.2, 2) \u279e False\n  \n\n    \n    '''\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "```python\ndef any_int(x, y, z):\n    if type(x) == int and type(y) == int and type(z) == int:\n        if x + y == z or x + z == y or y + z == x:\n            return True\n        return False\n    return False\n\n```"
+}

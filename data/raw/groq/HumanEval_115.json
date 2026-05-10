@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:57:51.357179",
+  "problem_id": "HumanEval/115",
+  "problem_prompt": "\ndef max_fill(grid, capacity):\n    import math\n    \"\"\"\n    You are given a rectangular grid of wells. Each row represents a single well,\n    and each 1 in a row represents a single unit of water.\n    Each well has a corresponding bucket that can be used to extract water from it, \n    and all buckets have the same capacity.\n    Your task is to use the buckets to empty the wells.\n    Output the number of times you need to lower the buckets.\n\n    Example 1:\n        Input: \n            grid : [[0,0,1,0], [0,1,0,0], [1,1,1,1]]\n            bucket_capacity : 1\n        Output: 6\n\n    Example 2:\n        Input: \n            grid : [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]\n            bucket_capacity : 2\n        Output: 5\n    \n    Example 3:\n        Input: \n            grid : [[0,0,0], [0,0,0]]\n            bucket_capacity : 5\n        Output: 0\n\n    Constraints:\n        * all wells have the same length\n        * 1 <= grid.length <= 10^2\n        * 1 <= grid[:,1].length <= 10^2\n        * grid[i][j] -> 0 | 1\n        * 1 <= capacity <= 10\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def max_fill(grid, capacity):\n    \"\"\"\n    You are given a rectangular grid of wells. Each row represents a single well,\n    and each 1 in a row represents a single unit of water.\n    Each well has a corresponding bucket that can be used to extract water from it, \n    and all buckets have the same capacity.\n    Your task is to use the buckets to empty the wells.\n    Output the number of times you need to lower the buckets.\n    \"\"\"\n    def calculate_water(well):\n        return sum(well)\n\n    def fill_bucket(well, capacity):\n        return min(capacity, calculate_water(well))\n\n    def empty_bucket(well, capacity):\n        water = fill_bucket(well, capacity)\n        well[:] = [x - water if x > water else 0 for x in well]\n        return water\n\n    total_water = sum(calculate_water(well) for well in grid)\n    total_fills = 0\n    while total_water > 0:\n        for i, well in enumerate(grid):\n            water = empty_bucket(well, capacity)\n            total_water -= water\n            total_fills += 1\n    return total_fills"
+}

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-04T10:30:50.606688",
+  "problem_id": "HumanEval/47",
+  "problem_prompt": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "```python\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n    sorted_list = sorted(l)\n    n = len(sorted_list)\n    if n % 2 == 1:\n        return sorted_list[n // 2]\n    else:\n        return (sorted_list[n // 2 - 1] + sorted_list[n // 2]) / 2.0\n```"
+}

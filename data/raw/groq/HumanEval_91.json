@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:50:21.264029",
+  "problem_id": "HumanEval/91",
+  "problem_prompt": "\ndef is_bored(S):\n    \"\"\"\n    You'll be given a string of words, and your task is to count the number\n    of boredoms. A boredom is a sentence that starts with the word \"I\".\n    Sentences are delimited by '.', '?' or '!'.\n   \n    For example:\n    >>> is_bored(\"Hello world\")\n    0\n    >>> is_bored(\"The sky is blue. The sun is shining. I love this weather\")\n    1\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def is_bored(S):\n    \"\"\"\n    You'll be given a string of words, and your task is to count the number\n    of boredoms. A boredom is a sentence that starts with the word \"I\".\n    Sentences are delimited by '.', '?' or '!'.\n\n    Args:\n        S (str): A string of words\n\n    Returns:\n        int: The number of boredoms\n    \"\"\"\n    sentences = S.replace('?', '.').replace('!', '.').split('.')\n    return sum(1 for sentence in sentences if sentence.strip() and sentence.strip()[0].lower() == 'i')"
+}

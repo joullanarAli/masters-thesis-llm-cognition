@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-03T23:47:51.809576",
+  "problem_id": "HumanEval/22",
+  "problem_prompt": "from typing import List, Any\n\n\ndef filter_integers(values: List[Any]) -> List[int]:\n    \"\"\" Filter given list of any python values only for integers\n    >>> filter_integers(['a', 3.14, 5])\n    [5]\n    >>> filter_integers([1, 2, 3, 'abc', {}, []])\n    [1, 2, 3]\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "from typing import List, Any\n\n\ndef filter_integers(values: List[Any]) -> List[int]:\n    return [x for x in values if isinstance(x, int)]"
+}

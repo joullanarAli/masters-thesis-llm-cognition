@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:40:09.843738",
+  "problem_id": "HumanEval/55",
+  "problem_prompt": "\n\ndef fib(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib(10)\n    55\n    >>> fib(1)\n    1\n    >>> fib(8)\n    21\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def fib(n: int) -> int:\n    if n <= 1:\n        return n\n    else:\n        return fib(n-1) + fib(n-2)"
+}

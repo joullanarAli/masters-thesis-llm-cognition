@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:28:41.021520",
+  "problem_id": "HumanEval/18",
+  "problem_prompt": "\n\ndef how_many_times(string: str, substring: str) -> int:\n    \"\"\" Find how many times a given substring can be found in the original string. Count overlaping cases.\n    >>> how_many_times('', 'a')\n    0\n    >>> how_many_times('aaa', 'a')\n    3\n    >>> how_many_times('aaaa', 'aa')\n    3\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def how_many_times(string: str, substring: str) -> int:\n    count = 0\n    for i in range(len(string)):\n        if string[i:].startswith(substring):\n            count += 1\n    return count"
+}

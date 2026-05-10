@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:41:00.230195",
+  "problem_id": "HumanEval/58",
+  "problem_prompt": "\n\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def common(l1: list, l2: list):\n    return sorted(set(l1) & set(l2))"
+}

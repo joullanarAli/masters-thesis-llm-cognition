@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T22:11:07.957008",
+  "problem_id": "HumanEval/161",
+  "problem_prompt": "\ndef solve(s):\n    \"\"\"You are given a string s.\n    if s[i] is a letter, reverse its case from lower to upper or vise versa, \n    otherwise keep it as it is.\n    If the string contains no letters, reverse the string.\n    The function should return the resulted string.\n    Examples\n    solve(\"1234\") = \"4321\"\n    solve(\"ab\") = \"AB\"\n    solve(\"#a@C\") = \"#A@c\"\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def solve(s):\n    result = \"\"\n    for char in s:\n        if char.isalpha():\n            result += char.swapcase()\n        else:\n            result += char\n    return result[::-1] if not any(char.isalpha() for char in s) else result"
+}

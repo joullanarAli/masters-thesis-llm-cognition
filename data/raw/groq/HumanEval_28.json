@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:31:32.119351",
+  "problem_id": "HumanEval/28",
+  "problem_prompt": "from typing import List\n\n\ndef concatenate(strings: List[str]) -> str:\n    \"\"\" Concatenate list of strings into a single string\n    >>> concatenate([])\n    ''\n    >>> concatenate(['a', 'b', 'c'])\n    'abc'\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def concatenate(strings: List[str]) -> str:\n    return ''.join(strings)"
+}

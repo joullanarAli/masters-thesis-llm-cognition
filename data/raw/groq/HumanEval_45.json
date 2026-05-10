@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:37:06.330283",
+  "problem_id": "HumanEval/45",
+  "problem_prompt": "\n\ndef triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\n    >>> triangle_area(5, 3)\n    7.5\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\"\"\"\n    return 0.5 * a * h"
+}

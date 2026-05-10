@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:31:14.846926",
+  "problem_id": "HumanEval/27",
+  "problem_prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def flip_case(string: str) -> str:\n    return ''.join(char.swapcase() for char in string)"
+}

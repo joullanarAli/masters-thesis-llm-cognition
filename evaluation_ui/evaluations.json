@@ -2,57 +2,793 @@
   "HumanEval/0": {
     "rated": true,
     "correctness": 5,
-    "readability": 4,
+    "readability": 5,
+    "reliability": 5,
     "intention_to_use": "yes",
-    "comments": ""
-  },
-  "HumanEval/1": {
-    "rated": true,
-    "correctness": 1,
-    "readability": 3,
-    "intention_to_use": "no",
-    "comments": "The algorithm misunderstands the problem. The 'balance' counter tracks nesting for the entire string, not per group. This will incorrectly merge separate adjacent groups (like \"()(())\") or split nested groups incorrectly. A correct solution must detect the start of a new top-level group (when char=='(' and balance==0)."
+    "comments": "Optimal algorithm - Sorting then checking adjacent differences is O(n log n), which is optimal for this problem (brute force would be O(n\u00b2))\r\n\r\nHandles edge cases correctly:\r\n\r\nEmpty list: range(-1) \u2192 loop never runs \u2192 returns False \u2713\r\n\r\nSingle element: returns False \u2713\r\n\r\nNegative numbers: differences work correctly \u2713\r\n\r\nThreshold = 0: checks for exact duplicates \u2713\r\n\r\nClean code structure - No unnecessary imports beyond typing\r\n\r\nDocumentation - Docstring includes clear examples matching the problem statement",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   },
   "HumanEval/2": {
     "rated": true,
     "correctness": 5,
     "readability": 5,
+    "reliability": 5,
     "intention_to_use": "yes",
-    "comments": ""
+    "comments": "Minimal and elegant - One line of code that perfectly solves the problem. No unnecessary complexity.\r\n\r\nMathematically correct - int(number) truncates toward zero, which for positive numbers gives the floor. Therefore number - floor(number) = decimal part.\r\nEdge cases handled\r\nPerformance - O(1) constant time, no memory allocation beyond the return value",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/3": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "Perfect algorithm - O(n) time, O(1) space. Cannot be optimized further.\r\n\r\nEarly termination - Returns True immediately when balance drops below zero, no need to process remaining operations. This is efficient.\r\nEdge cases handled correctly\r\nClean and minimal - No unnecessary imports or variables. The code does exactly what it needs to do.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/4": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "Mathematically correct - Follows the MAD formula precisely\r\nElegant Python - The generator expression (abs(x - mean) for x in numbers) is memory-efficient (doesn't create an intermediate list) and highly readable.\r\n\r\nProper typing - Uses List[float] and returns float correctly.\r\n\r\nDocstring matches spec - Includes the example that verifies the implementation.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/5": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "Correct algorithm - The logic is sound.\r\nEdge case handled explicitly - if not numbers: return [] ensures empty input returns empty list.\r\nClear variable names - delimeter (though misspelled - should be delimiter but matches function signature) is clear.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/6": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "Correct algorithm - Uses a counter to track current nesting depth and tracks the maximum reached.\r\nProper string splitting - paren_string.split() correctly separates groups by spaces (handles multiple spaces naturally since split() without arguments splits on any whitespace and ignores empty strings).\r\nEfficient - O(n) time where n is the total number of characters, O(1) extra space per group (plus results array).\r\nClean initialization - Resets max_depth and current_depth for each group.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   },
   "HumanEval/7": {
     "rated": true,
     "correctness": 5,
     "readability": 5,
+    "reliability": 5,
     "intention_to_use": "yes",
-    "comments": ""
+    "comments": "Optimal Python solution - List comprehension is the idiomatic way to filter lists in Python. One line, no unnecessary complexity.\r\nCorrect logic - substring in s checks membership correctly. This is the exact operation needed.\r\nHandles all edge cases.\r\nMemory efficient - Creates a new filtered list without modifying the original.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   },
   "HumanEval/8": {
     "rated": true,
     "correctness": 5,
     "readability": 5,
+    "reliability": 5,
     "intention_to_use": "yes",
-    "comments": "Clear and correct iterative solution. Correctly initializes sum to 0 and product to 1 to handle the empty list case. Very readable."
+    "comments": "Correct initial values - sum_val = 0 (sum identity) and prod_val = 1 (product identity) are mathematically correct. This is critical and the AI got it right.\r\nHandles empty list correctly.\r\nEfficient - O(n) time with a single pass, O(1) extra space.\r\nClean return syntax - return sum_val, prod_val creates a tuple implicitly.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   },
   "HumanEval/9": {
     "rated": true,
     "correctness": 5,
     "readability": 5,
+    "reliability": 5,
     "intention_to_use": "yes",
-    "comments": "Perfect implementation of the rolling maximum algorithm. Correctly initializes and updates the current_max in a single pass. Clear and efficient."
+    "comments": "Correct algorithm - Tracks the running maximum and appends it to results after each element.\r\nEdge case handled - if not numbers: return [] properly handles empty input.\r\nEfficient - Single pass O(n) time, O(n) space for result (necessary).\r\nClear initialization - current_max = numbers[0] sets proper starting point.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   },
   "HumanEval/10": {
     "rated": true,
     "correctness": 5,
-    "readability": 4,
+    "readability": 5,
+    "reliability": 5,
     "intention_to_use": "yes",
-    "comments": "Elegant and correct implementation. The loop efficiently finds the longest palindromic suffix by checking slices from string[i:]. A classic solution for this problem."
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   },
   "HumanEval/11": {
     "rated": true,
     "correctness": 5,
     "readability": 5,
+    "reliability": 4,
     "intention_to_use": "yes",
-    "comments": "Expert-level Python solution. Elegantly implements XOR logic as a character comparison within a generator expression and zip. A perfect example of writing Pythonic code."
+    "comments": "The code assumes:\r\nStrings are equal length - zip() stops at the shorter string if lengths differ\r\nStrings contain only '0' and '1' - No validation",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/12": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/13": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/14": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/15": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/17": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 4,
+    "intention_to_use": "modified",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/19": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/21": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 4,
+    "intention_to_use": "modified",
+    "comments": "equal numbers edge case",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/23": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/24": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 4,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "hard for beginners to understand, Code is clean and efficient, but the sqrt optimization may be less readable for junior developers. The algorithm cleverly uses divisor pairing (i and n//i) to return the larger divisor immediately. While mathematically elegant, a beginner might need explanation. An alternative approach looping from n//2 downward would be simpler but slower",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/25": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/26": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/27": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/28": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/29": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/30": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/33": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/34": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/35": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/37": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/1": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/16": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/18": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/20": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/22": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/31": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 4,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "The 6k\u00b11 optimization is mathematically elegant but may be difficult for junior developers to understand.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/32": {
+    "rated": true,
+    "correctness": 1,
+    "readability": 1,
+    "reliability": 1,
+    "intention_to_use": "no",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/36": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/38": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/39": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/40": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/41": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/42": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/43": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/44": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/45": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/46": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/47": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/48": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/49": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/50": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 4,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "The calculation ((ord(ch) + 5 - ord('a')) % 26) + ord('a') is mathematically sound but visually dense. Breaking it into steps would improve readability",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/51": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/52": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/53": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/54": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/55": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/56": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/57": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/58": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/59": {
+    "rated": true,
+    "correctness": 4,
+    "readability": 4,
+    "reliability": 4,
+    "intention_to_use": "modified",
+    "comments": "Needs a fix for the prime power edge case",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/60": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/61": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/62": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/63": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/64": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/65": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/66": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/67": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/68": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/69": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/70": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/71": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/72": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/73": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/74": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/77": {
+    "rated": true,
+    "correctness": 4,
+    "readability": 4,
+    "reliability": 3,
+    "intention_to_use": "modified",
+    "comments": "Works for many cases but has floating-point precision issues for large numbers.",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/78": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/80": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/82": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/83": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 4,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/85": {
+    "rated": true,
+    "correctness": 1,
+    "readability": 1,
+    "reliability": 1,
+    "intention_to_use": "no",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/88": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/90": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/92": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/97": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/98": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/100": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
+  },
+  "HumanEval/105": {
+    "rated": true,
+    "correctness": 5,
+    "readability": 5,
+    "reliability": 5,
+    "intention_to_use": "yes",
+    "comments": "",
+    "evaluator_id": "8012e080-c655-47ef-958c-5d4a15cf16c5"
   }
 }

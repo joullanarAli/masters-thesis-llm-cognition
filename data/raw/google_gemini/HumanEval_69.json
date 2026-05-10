@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-05T15:44:52.486140",
+  "problem_id": "HumanEval/69",
+  "problem_prompt": "\ndef search(lst):\n    '''\n    You are given a non-empty list of positive integers. Return the greatest integer that is greater than \n    zero, and has a frequency greater than or equal to the value of the integer itself. \n    The frequency of an integer is the number of times it appears in the list.\n    If no such a value exist, return -1.\n    Examples:\n        search([4, 1, 2, 2, 3, 1]) == 2\n        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3\n        search([5, 5, 4, 4, 4]) == -1\n    '''\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "```python\ndef search(lst):\n    counts = {}\n    for x in lst:\n        counts[x] = counts.get(x, 0) + 1\n    \n    max_val = -1\n    for x, count in counts.items():\n        if x > 0 and count >= x:\n            if x > max_val:\n                max_val = x\n    return max_val\n```"
+}

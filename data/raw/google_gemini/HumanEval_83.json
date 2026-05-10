@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-01T10:57:03.997859",
+  "problem_id": "HumanEval/83",
+  "problem_prompt": "\ndef starts_one_ends(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n",
+  "model_name": "google_gemini",
+  "model_config": {
+    "model": "gemini-3-flash-preview"
+  },
+  "generated_code": "def starts_one_ends(n):\n    if n == 1:\n        return 1\n    return 18 * 10**(n - 2)"
+}

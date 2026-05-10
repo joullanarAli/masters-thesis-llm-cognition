@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:54:38.813686",
+  "problem_id": "HumanEval/104",
+  "problem_prompt": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def unique_digits(x):\n    def has_even_digit(n):\n        return any(int(digit) % 2 == 0 for digit in str(n))\n    \n    return sorted([num for num in x if not has_even_digit(num)])"
+}

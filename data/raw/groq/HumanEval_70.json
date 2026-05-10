@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:44:25.727525",
+  "problem_id": "HumanEval/70",
+  "problem_prompt": "\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def strange_sort_list(lst):\n    if not lst:\n        return []\n    sorted_lst = sorted(lst)\n    result = []\n    i, j = 0, len(sorted_lst) - 1\n    while i <= j:\n        result.append(sorted_lst[i])\n        if i != j:\n            result.append(sorted_lst[j])\n        i += 1\n        j -= 1\n    return result"
+}

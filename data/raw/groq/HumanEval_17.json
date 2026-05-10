@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:28:23.750534",
+  "problem_id": "HumanEval/17",
+  "problem_prompt": "from typing import List\n\n\ndef parse_music(music_string: str) -> List[int]:\n    \"\"\" Input to this function is a string representing musical notes in a special ASCII format.\n    Your task is to parse this string and return list of integers corresponding to how many beats does each\n    not last.\n\n    Here is a legend:\n    'o' - whole note, lasts four beats\n    'o|' - half note, lasts two beats\n    '.|' - quater note, lasts one beat\n\n    >>> parse_music('o o| .| o| o| .| .| .| .| o o')\n    [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "from typing import List\n\ndef parse_music(music_string: str) -> List[int]:\n    notes = {\n        'o': 4,\n        'o|': 2,\n        '.|': 1\n    }\n    return [notes[note] for note in music_string.split()]"
+}

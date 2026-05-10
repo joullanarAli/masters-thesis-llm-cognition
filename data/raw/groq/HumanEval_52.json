@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:39:19.786943",
+  "problem_id": "HumanEval/52",
+  "problem_prompt": "\n\ndef below_threshold(l: list, t: int):\n    \"\"\"Return True if all numbers in the list l are below threshold t.\n    >>> below_threshold([1, 2, 4, 10], 100)\n    True\n    >>> below_threshold([1, 20, 4, 10], 5)\n    False\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def below_threshold(l: list, t: int) -> bool:\n    return all(i < t for i in l)"
+}

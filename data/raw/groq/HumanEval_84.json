@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-05T21:48:22.583385",
+  "problem_id": "HumanEval/84",
+  "problem_prompt": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 \u2264 N \u2264 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n",
+  "model_name": "groq",
+  "model_config": {
+    "model": "llama-3.1-8b-instant",
+    "temperature": 0.2,
+    "max_tokens": 5000
+  },
+  "generated_code": "def solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\"\"\"\n    binary_sum = 0\n    for i in range(N.bit_length(), -1, -1):\n        binary_sum += (N >> i) & 1\n    return bin(binary_sum)[2:]"
+}
