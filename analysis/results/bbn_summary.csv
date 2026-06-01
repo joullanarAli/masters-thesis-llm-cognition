@@ -1,0 +1,3 @@
+model,accuracy,baseline,improvement,interpretation
+Google Gemini,82.3%,80.8%,1.8%,Ceiling effect - most responses were High usefulness
+Groq (LLaMA 3.1),60.2%,39.8%,51.1%,Matches Kovalchuk et al.'s 76-77% improvement

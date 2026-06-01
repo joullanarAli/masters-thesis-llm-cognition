@@ -1,0 +1,9 @@
+name,expertise,years,ai_usage,languages,mean_correctness,mean_readability,mean_reliability,usefulness_rate
+Joullanar Ali,student_master,8,daily,,4.76,4.38,4.59,78.5%
+Laith,senior,8,daily,Python,4.7,4.27,4.48,51.2%
+Katia,junior,2,daily,"Java, Python",4.53,4.09,4.34,47.7%
+Egor,student_bachelor,1,weekly,Java,4.5,4.18,4.37,46.5%
+Leen,student_master,7,weekly,Java,4.65,4.22,4.44,38.4%
+Senior_Developer,senior,7,daily,Java,4.62,4.24,4.41,43.6%
+Junior_Developer,junior,1,weekly,Python,4.58,4.06,4.35,38.4%
+PhD Student,student_phd,8,daily,Python,4.66,4.41,4.47,44.8%

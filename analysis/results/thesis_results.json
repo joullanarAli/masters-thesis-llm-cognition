@@ -1,0 +1,174 @@
+{
+  "study_info": {
+    "title": "Cognitive State Modeling in LLM Code Evaluation",
+    "date": "2026-05-16",
+    "total_records": 1376,
+    "evaluators": 8,
+    "models": 2,
+    "problems": 86
+  },
+  "evaluator_profiles": [
+    {
+      "name": "Joullanar Ali",
+      "expertise": "student_master",
+      "years": 8,
+      "ai_usage": "daily",
+      "languages": "",
+      "mean_correctness": 4.76,
+      "mean_readability": 4.38,
+      "mean_reliability": 4.59,
+      "usefulness_rate": "78.5%"
+    },
+    {
+      "name": "Laith",
+      "expertise": "senior",
+      "years": 8,
+      "ai_usage": "daily",
+      "languages": "Python",
+      "mean_correctness": 4.7,
+      "mean_readability": 4.27,
+      "mean_reliability": 4.48,
+      "usefulness_rate": "51.2%"
+    },
+    {
+      "name": "Katia",
+      "expertise": "junior",
+      "years": 2,
+      "ai_usage": "daily",
+      "languages": "Java, Python",
+      "mean_correctness": 4.53,
+      "mean_readability": 4.09,
+      "mean_reliability": 4.34,
+      "usefulness_rate": "47.7%"
+    },
+    {
+      "name": "Egor",
+      "expertise": "student_bachelor",
+      "years": 1,
+      "ai_usage": "weekly",
+      "languages": "Java",
+      "mean_correctness": 4.5,
+      "mean_readability": 4.18,
+      "mean_reliability": 4.37,
+      "usefulness_rate": "46.5%"
+    },
+    {
+      "name": "Leen",
+      "expertise": "student_master",
+      "years": 7,
+      "ai_usage": "weekly",
+      "languages": "Java",
+      "mean_correctness": 4.65,
+      "mean_readability": 4.22,
+      "mean_reliability": 4.44,
+      "usefulness_rate": "38.4%"
+    },
+    {
+      "name": "Senior_Developer",
+      "expertise": "senior",
+      "years": 7,
+      "ai_usage": "daily",
+      "languages": "Java",
+      "mean_correctness": 4.62,
+      "mean_readability": 4.24,
+      "mean_reliability": 4.41,
+      "usefulness_rate": "43.6%"
+    },
+    {
+      "name": "Junior_Developer",
+      "expertise": "junior",
+      "years": 1,
+      "ai_usage": "weekly",
+      "languages": "Python",
+      "mean_correctness": 4.58,
+      "mean_readability": 4.06,
+      "mean_reliability": 4.35,
+      "usefulness_rate": "38.4%"
+    },
+    {
+      "name": "PhD Student",
+      "expertise": "student_phd",
+      "years": 8,
+      "ai_usage": "daily",
+      "languages": "Python",
+      "mean_correctness": 4.66,
+      "mean_readability": 4.41,
+      "mean_reliability": 4.47,
+      "usefulness_rate": "44.8%"
+    }
+  ],
+  "model_performance": [
+    {
+      "model": "Google Gemini",
+      "correctness": "4.97 \u00b1 0.16",
+      "readability": "4.62 \u00b1 0.54",
+      "reliability": "4.94 \u00b1 0.34",
+      "usefulness_rate": "74.4%",
+      "modified_rate": "24.7%",
+      "reject_rate": "0.9%"
+    },
+    {
+      "model": "Groq (LLaMA 3.1)",
+      "correctness": "4.28 \u00b1 1.32",
+      "readability": "3.84 \u00b1 0.91",
+      "reliability": "3.93 \u00b1 1.46",
+      "usefulness_rate": "22.8%",
+      "modified_rate": "48.7%",
+      "reject_rate": "28.5%"
+    }
+  ],
+  "bbn_results": [
+    {
+      "model": "Google Gemini",
+      "accuracy": "82.3%",
+      "baseline": "80.8%",
+      "improvement": "1.8%",
+      "interpretation": "Ceiling effect - most responses were High usefulness"
+    },
+    {
+      "model": "Groq (LLaMA 3.1)",
+      "accuracy": "60.2%",
+      "baseline": "39.8%",
+      "improvement": "51.1%",
+      "interpretation": "Matches Kovalchuk et al.'s 76-77% improvement"
+    }
+  ],
+  "cognitive_state_impact": [
+    {
+      "expertise_level": "Student Bachelor",
+      "count": 172,
+      "mean_correctness": 4.5,
+      "mean_readability": 4.18,
+      "mean_reliability": 4.37,
+      "usefulness_rate": "46.5%",
+      "gemini_vs_groq_diff": 0.93
+    },
+    {
+      "expertise_level": "Junior",
+      "count": 344,
+      "mean_correctness": 4.56,
+      "mean_readability": 4.07,
+      "mean_reliability": 4.34,
+      "usefulness_rate": "43.0%",
+      "gemini_vs_groq_diff": 0.85
+    },
+    {
+      "expertise_level": "Student Master",
+      "count": 344,
+      "mean_correctness": 4.71,
+      "mean_readability": 4.3,
+      "mean_reliability": 4.52,
+      "usefulness_rate": "58.4%",
+      "gemini_vs_groq_diff": 0.53
+    },
+    {
+      "expertise_level": "Senior",
+      "count": 344,
+      "mean_correctness": 4.66,
+      "mean_readability": 4.26,
+      "mean_reliability": 4.45,
+      "usefulness_rate": "47.4%",
+      "gemini_vs_groq_diff": 0.62
+    }
+  ]
+}
