@@ -42,7 +42,7 @@ def plot_confusion_matrix():
     plt.savefig('results/figures/figure5_confusion_matrix.png', dpi=300, bbox_inches='tight')
     plt.show()
     
-    print("✓ Figure 5 saved: results/figures/figure5_confusion_matrix.png")
+    print("Figure 5 saved: results/figures/figure5_confusion_matrix.png")
 
 if __name__ == "__main__":
     plot_confusion_matrix()

@@ -80,7 +80,7 @@ def plot_tsne(embeddings_df):
     plt.savefig(save_path, dpi=150, bbox_inches='tight')
     plt.show()
     
-    print(f"✓ t-SNE visualization saved to {save_path}")
+    print(f"t-SNE visualization saved to {save_path}")
 
 def main():
     print("="*60)

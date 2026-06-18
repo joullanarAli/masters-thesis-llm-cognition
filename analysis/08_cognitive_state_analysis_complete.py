@@ -148,7 +148,7 @@ def save_results_for_supervisor(results):
     pd.DataFrame(results['bbn_results']).to_csv(output_dir / 'bbn_summary.csv', index=False)
     pd.DataFrame(results['cognitive_state_impact']).to_csv(output_dir / 'cognitive_state_impact.csv', index=False)
     
-    print(f"\n✅ Results saved to {output_dir}/")
+    print(f"\nResults saved to {output_dir}/")
     print("   - thesis_results.json")
     print("   - evaluator_profiles.csv")
     print("   - model_performance.csv")
@@ -159,26 +159,3 @@ if __name__ == "__main__":
     results = generate_thesis_results()
     print_thesis_tables(results)
     save_results_for_supervisor(results)
-    
-    print("\n" + "="*80)
-    print("KEY FINDINGS FOR THESIS DISCUSSION")
-    print("="*80)
-    print("""
-    1. MODEL COMPARISON:
-       Google Gemini significantly outperforms Groq across all metrics
-       (4.98 vs 4.27 correctness, 80.8% vs 31.1% usefulness rate)
-    
-    2. COGNITIVE STATE VALIDATION:
-       Bayesian Belief Network with cognitive state achieves 51.1% improvement
-       over baseline for Groq, replicating Kovalchuk et al.'s findings
-    
-    3. EXPERTISE EFFECT:
-       Master's level developers showed highest usefulness rate (88.4%)
-       Bachelor's level lowest (80.2%), suggesting expertise positively
-       influences AI code adoption
-    
-    4. PRACTICAL IMPLICATION:
-       Personalized AI assistants should adapt to developer cognitive state,
-       with junior developers receiving more detailed explanations and
-       senior developers receiving more concise, efficient code
-    """)

@@ -139,7 +139,7 @@ def create_bbn_accuracy_figure():
     plt.tight_layout()
     plt.savefig('results/figures/figure4_bbn_accuracy.png', dpi=300, bbox_inches='tight')
     plt.show()
-    print("✓ Figure 4 saved: results/figures/figure4_bbn_accuracy.png")
+    print("Figure 4 saved: results/figures/figure4_bbn_accuracy.png")
 
 if __name__ == "__main__":
     print("Creating publication-ready figures for thesis...")
@@ -152,4 +152,4 @@ if __name__ == "__main__":
     create_cognitive_state_impact_figure(df)
     create_bbn_accuracy_figure()
     
-    print("\n✅ All figures saved to results/figures/")
+    print("\nAll figures saved to results/figures/")

@@ -91,13 +91,13 @@ def train_and_evaluate_bbn(df):
     for col in ['C', 'SC', 'SA', 'SRel', 'SU']:
         data[col] = data[col].astype('category')
     
-    print(f"\n📊 Data shape: {len(data)} records")
-    print(f"📊 Unique C values (expertise): {sorted(data['C'].unique())}")
-    print(f"📊 SU distribution:\n{data['SU'].value_counts()}")
+    print(f"\nData shape: {len(data)} records")
+    print(f"Unique C values (expertise): {sorted(data['C'].unique())}")
+    print(f"SU distribution:\n{data['SU'].value_counts()}")
     
     # Skip if too few samples
     if len(data) < 10:
-        print("\n⚠️ Too few samples for reliable BNN. Need at least 10.")
+        print("\nToo few samples for reliable BNN. Need at least 10.")
         return None, None, None
     
     # Leave-one-out cross-validation
@@ -106,7 +106,7 @@ def train_and_evaluate_bbn(df):
     actuals = []
     correct = 0
     
-    print("\n🔄 Running Leave-One-Out Cross-Validation...")
+    print("\nRunning Leave-One-Out Cross-Validation...")
     
     for fold, (train_idx, test_idx) in enumerate(loo.split(data)):
         train_data = data.iloc[train_idx]
@@ -146,13 +146,13 @@ def train_and_evaluate_bbn(df):
     print(f"\n{'='*60}")
     print(f"BAYESIAN BELIEF NETWORK RESULTS")
     print(f"{'='*60}")
-    print(f"✅ Accuracy: {accuracy:.4f} ({accuracy*100:.1f}%)")
-    print(f"✅ Correct predictions: {correct}/{len(data)}")
+    print(f"Accuracy: {accuracy:.4f} ({accuracy*100:.1f}%)")
+    print(f"Correct predictions: {correct}/{len(data)}")
     
     # Confusion matrix
     from sklearn.metrics import confusion_matrix
     cm = confusion_matrix(actuals, predictions, labels=['Low', 'Medium', 'High'])
-    print(f"\n📊 Confusion Matrix:")
+    print(f"\nConfusion Matrix:")
     print(f"                 Predicted")
     print(f"                 Low  Med  High")
     print(f"Actual Low:     {cm[0,0]:3d}  {cm[0,1]:3d}   {cm[0,2]:3d}")
@@ -229,9 +229,9 @@ def main():
     
     # Load data
     df = load_master_dataset('../data/master_dataset.jsonl')
-    print(f"\n📁 Loaded {len(df)} total records")
-    print(f"📁 Evaluators: {df['evaluator_name'].nunique()}")
-    print(f"📁 Models: {df['model_name'].unique().tolist()}")
+    print(f"\nLoaded {len(df)} total records")
+    print(f"Evaluators: {df['evaluator_name'].nunique()}")
+    print(f"Models: {df['model_name'].unique().tolist()}")
     
     # Analyze by model separately
     results_summary = []
@@ -276,7 +276,7 @@ def main():
     
     if results_summary:
         results_df.to_csv(output_dir / 'bbn_results.csv', index=False)
-        print(f"\n✅ Results saved to {output_dir}/bbn_results.csv")
+        print(f"\nResults saved to {output_dir}/bbn_results.csv")
 
 if __name__ == "__main__":
     main()

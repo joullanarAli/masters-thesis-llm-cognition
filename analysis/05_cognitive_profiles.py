@@ -77,4 +77,4 @@ if __name__ == "__main__":
     profiles = extract_cognitive_profiles(df)
     profiles = analyze_cognitive_clusters(profiles)
     profiles.to_csv('results/cognitive_profiles.csv', index=False)
-    print("\n✓ Cognitive profiles saved to results/cognitive_profiles.csv")
+    print("\nCognitive profiles saved to results/cognitive_profiles.csv")

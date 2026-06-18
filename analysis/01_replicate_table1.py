@@ -175,7 +175,7 @@ def main():
     df = load_master_dataset('../data/master_dataset.jsonl')
     
     # 1. Model statistics (Table 1 equivalent)
-    print("\n📊 TABLE 1: Model Performance Statistics")
+    print("\nTABLE 1: Model Performance Statistics")
     print("-"*60)
     model_stats = compute_model_statistics(df)
     print(model_stats.to_string(index=False))
@@ -203,7 +203,7 @@ def main():
     evaluator_stats.to_csv(output_dir / 'evaluator_statistics.csv', index=False)
     interaction_df.to_csv(output_dir / 'expertise_preferences.csv', index=False)
     
-    print(f"\n\n✅ Results saved to {output_dir}/")
+    print(f"\n\nResults saved to {output_dir}/")
     print("   - model_statistics.csv")
     print("   - evaluator_statistics.csv")
     print("   - expertise_preferences.csv")
